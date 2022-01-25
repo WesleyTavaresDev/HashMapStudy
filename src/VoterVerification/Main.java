@@ -19,7 +19,7 @@ public class Main
     public void VoterCheck(String name)
     {
 
-        if(voted.get(name) != null)
+        if(voted.containsKey(name))
             System.out.printf("%s has already voted%n", name);
         else
         {
