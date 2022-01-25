@@ -4,8 +4,6 @@ import java.util.Scanner;
 
 public class PhoneBook
 {
-
-
     public  static  void main(String[] args)
     {
         HashMap<String, Long> phoneBook = new HashMap<>();
@@ -17,15 +15,15 @@ public class PhoneBook
         phoneBook.put("George Orwell", 6135550164L);
 
         for(String i : phoneBook.keySet())
-        {
             System.out.println(i);
-        }
 
         System.out.print("Choose one of the names above -> ");
-
         Scanner sc = new Scanner(System.in);
-        String name = sc.next();
+        String name = sc.nextLine();
 
-        System.out.printf("Name: %s %nPhone: %s %n", name, phoneBook.get(name));
+        if(phoneBook.containsKey(name))
+            System.out.printf("Name: %s %nPhone: %s %n", name, phoneBook.get(name));
+        else
+            System.out.println("Name not found");
     }
 }
